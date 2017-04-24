@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ZH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src='./search.js'></script>
+ 
+  <div>
+      设置或改变查询参数： <input id='key' value='key'>=
+      <input id='value' value='value'>
+      <button id='set'>set</button>
+  </div>
+  <div>
+      输入key： <input id='key1' value='key'>
+      ，获取value: <input  value='value' id='value1'>
+      <button id='get'>get</button>
+  </div>
+<script>
+//通过输入框，输入查询参数的key与value，目前仅能设置一组key与value
+set.onclick=function(){
+    let key=document.getElementById('key').value
+    let value=document.getElementById('value').value
+    $.bom.search(key,value)}
+//输入一个key，返回一个对应的value，如无对应的value，则返回undefined
+get.onclick=function(){
+    let key=document.getElementById('key1').value
+    document.getElementById('value1').value=$.bom.search(key)}
+</script> 
+</body>
+</html>
